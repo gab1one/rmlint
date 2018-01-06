@@ -1,11 +1,11 @@
 Name:           rmlint
-Version:        2.2.0
+Version:        2.6.1
 Release:        0%{?dist}
 Summary:        rmlint finds space waste and other broken things on your filesystem and offers to remove it.
 Group:          Applications/System
 License:        GPLv3
 URL:            http://rmlint.rtfd.org
-Source0:        https://github.com/sahib/rmlint/archive/rmlint-%{version}.tar.gz
+Source0:        https://github.com/sahib/rmlint/archive/v%{version}/rmlint-%{version}.tar.gz
 Requires:       glib2 libblkid elfutils-libelf json-glib
 BuildRequires:  scons python3-sphinx gettext libblkid-devel elfutils-libelf-devel glib2-devel json-glib-devel
 
@@ -13,8 +13,13 @@ BuildRequires:  scons python3-sphinx gettext libblkid-devel elfutils-libelf-deve
 rmlint finds space waste and other broken things and offers to remove it. It is
 especially an extremely fast tool to remove duplicates from your filesystem.
 
-%prep 
-%autosetup -c rmlint-%{version}
+%package shredder
+Summary:  GUI for rmlint
+Group:    Applications/System
+Requires: rmlint
+
+%prep
+%setup -q
 
 %build scons config; scons --prefix=%{buildroot}/usr --actual-prefix=/usr --libdir=lib64
 
@@ -40,7 +45,15 @@ rm -rf %{buildroot}
 # %{_libdir}/*
 # %{_includedir}/*
 
+%files shredder
+%{python3_sitelib}/*
+%{_datadir}/applications/shredder.desktop
+%{_datadir}/glib-2.0/schemas/*
+%{_datadir}/icons/hicolor/scalable/apps/shredder.svg
+
 %changelog
+* Sat Jan 06 2018 Gabriel Einsdorf <gabriel.einsdorf@uni-konstanz.de> - 2.6.1
+- Port changes from centos spec
 * Sun May 10 2015 Christopher Pahl <sahib@online.de> - 2.2.0
 - Update version to 2.2.0
 * Sun Jan 12 2015 Christopher Pahl <sahib@online.de> - 2.0.0
