@@ -58,16 +58,3 @@ rm -rf %{buildroot}
 * Sat Dec 16 2017 Patrick Hemmer <patrick.hemmer@gmail.com> - 2.6.1
 - Fix source URL.
 - Split shredder into subpackage.
-* Fri Oct 27 2017 Vince Mele <vincentmele@gmail.com> - 2.6.1
-- Update to version 2.6.1. Remove python-sphinx3 dependency.
-- Use setup -q.
-* Sun May 10 2015 Christopher Pahl <sahib@online.de> - 2.2.0
-- Update version to 2.2.0
-* Sun Jan 12 2015 Christopher Pahl <sahib@online.de> - 2.0.0
-- Fix rpm for lib separation.
-* Sat Dec 20 2014 Christopher Pahl <sahib@online.de> - 2.0.0
-- Use autosetup instead of setup -q
-* Fri Dec 19 2014 Christopher Pahl <sahib@online.de> - 2.0.0
-- Updated wrong dependency list
-* Mon Dec 01 2014 Christopher Pahl <sahib@online.de> - 2.0.0
-- Initial release of RPM package
