@@ -5,7 +5,8 @@ Summary:        rmlint finds space waste and other broken things on your filesys
 Group:          Applications/System
 License:        GPLv3
 URL:            http://rmlint.rtfd.org
-Source0:        https://github.com/sahib/rmlint/archive/v%{version}/rmlint-%{version}.tar.gz
+Source0:        https://github.com/gab1one/rmlint/archive/v2.6.2.tar.gz
+
 Requires:       glib2 libblkid elfutils-libelf json-glib
 BuildRequires:  scons gettext libblkid-devel elfutils-libelf-devel glib2-devel json-glib-devel
 
